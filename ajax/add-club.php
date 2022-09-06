@@ -19,7 +19,7 @@ if (!empty($errors)) {
     echo json_encode($data);
 }
 
-require_once("con.php");
+require_once("conn.php");
 
 $table = get_table_name('club');
 $table2 = get_table_name('user_club');

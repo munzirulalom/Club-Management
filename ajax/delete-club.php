@@ -1,5 +1,5 @@
 <?php
-require_once("con.php");
+require_once("conn.php");
 
 if ( empty($_POST['club_id']) OR empty($_POST['status']) ) {
 	exit;

@@ -7,7 +7,7 @@ $search_term = (string) $_POST['search'];
 $output = '';
 
 //Database and function connection
-require_once("con.php");
+require_once("conn.php");
 
 $table = get_table_name('user');
 

@@ -4,7 +4,7 @@ if ( empty($_POST) ) {
 	return;
 }
 
-require_once("con.php");
+require_once("conn.php");
 
 $table = get_table_name('category_user');
 $cat_id = (int) secure_str( (string) $_POST['category_id'], 'dec' );
