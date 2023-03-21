@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <span class="avatar avatar-sm" style="background-image: url('<?php echo get_user_image(); ?>')"></span>
     <div class="d-none d-xl-block ps-2">
       <div><?php echo get_user_name(); ?></div>
-      <div class="mt-1 small text-muted"><?php echo is_admin() ? 'Supervisor' : 'Member'  ?></div>
+      <div class="mt-1 small text-muted"><?php echo is_admin() ? 'Admin' : 'Member'  ?></div>
     </div>
   </a>
   <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">

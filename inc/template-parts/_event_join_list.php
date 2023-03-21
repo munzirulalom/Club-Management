@@ -44,8 +44,8 @@ $stmt->execute();
 								</div>
 							</td>
 							<td data-label="Title">
-								<div>Mechanical Systems Engineer</div>
-								<div class="text-muted">Sub Text</div>
+								<div>--</div>
+								<div class="text-muted">--</div>
 							</td>
 						</tr>
 

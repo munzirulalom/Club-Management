@@ -54,9 +54,9 @@ if ( isset($_POST['update_event_submit']) ) {
 
 
 ?>
-<div class="container-xl">
+<div class="container">
 
-	<form id="add_event" method="POST" enctype="multipart/form-data">
+	<form id="add_event" method="POST" enctype="multipart/form-data" class="col-12 col-md-8 mx-auto">
 		<input type="hidden" name="club_id" value="<?php echo (string)$_GET['club_id']; ?>">
 		<input type="hidden" name="event_id" value="<?php echo $event['id'] ?>">
 		<div class="card-body">

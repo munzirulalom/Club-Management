@@ -32,7 +32,7 @@ if ( isset($_POST['update_club_submit']) ) {
 ?>
 <div class="container-xl">
 
-	<form id="add_event" method="POST" enctype="multipart/form-data">
+	<form id="add_event" method="POST" enctype="multipart/form-data" class="col-12 col-md-8 mx-auto">
 		<input type="hidden" name="club_id" value="<?php echo $club['id']; ?>">
 		<div class="card-body">
 			<div class="mb-3">

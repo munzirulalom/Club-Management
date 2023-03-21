@@ -20,7 +20,7 @@ require_once("template-parts/_add-club-modal.php");
             <div class="col-12 col-lg-auto mt-3 mt-lg-0">
               <ul class="list-inline list-inline-dots mb-0">
                 <li class="list-inline-item">
-                  Copyright &copy; 2022 All rights reserved.
+                  Copyright &copy; 2023 All rights reserved.
                 </li>
               </ul>
             </div>

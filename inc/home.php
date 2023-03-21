@@ -30,12 +30,6 @@ $stmt->execute();
 					<div class="mt-4">
 						<div class="row">
 							<div class="col-6">
-								<div class="avatar-list avatar-list-stacked">
-									<span class="avatar avatar-xs avatar-rounded">EP</span>
-									<span class="avatar avatar-xs avatar-rounded" style="background-image: url(./static/avatars/002f.jpg)"></span>
-									<span class="avatar avatar-xs avatar-rounded" style="background-image: url(./static/avatars/003f.jpg)"></span>
-									<span class="avatar avatar-xs avatar-rounded">HS</span>
-								</div>
 							</div>
 							<div class="col-6 text-muted">
 								<span class="switch-icon-a text-muted">

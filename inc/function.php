@@ -358,7 +358,7 @@ function is_admin( $id = false ) {
 	$stmt->execute();
 	$role = $stmt->fetchColumn();
 
-	if ($role == 1) {
+	if ($id == 1) {
 		return true;
 	}
 
@@ -388,6 +388,24 @@ function get_user_name( $id = false ) {
 	}
 
 	$stmt = $db->prepare("SELECT user_name FROM `{$table}` WHERE user_id = $id");
+	$stmt->execute();
+
+	return $stmt->fetchColumn();
+}
+
+//Get Current User Name
+function get_user_img_id( $id = false ) {
+	global $db;
+	$table = get_table_name('user');
+
+	if($id == false)
+	{
+		$id = (int) $_SESSION['id'];
+	}else{
+		$id = (int) $id;
+	}
+
+	$stmt = $db->prepare("SELECT img FROM `{$table}` WHERE user_id = $id");
 	$stmt->execute();
 
 	return $stmt->fetchColumn();
@@ -705,7 +723,7 @@ function can_manage( $role, $club_id = false, $id = false ){
 
 function msg_success( $msg ){
 	$msg = (string) $msg;
-	return '<div class="alert alert-success">'.$msg.'</div>';
+	return '<div class="alert alert-success col-6 mx-auto">'.$msg.'</div>';
 }
 
 function is_club_join( $club_id=false, $id=false ){
@@ -747,6 +765,34 @@ function is_club( $club_id=false ){
 	$table = get_table_name('club');
 
 	$stmt = $db->prepare("SELECT id FROM `{$table}` WHERE id = '{$club_id}'");
+	$stmt->execute();
+	$result = $stmt->rowCount();
+
+	if ( $result > 0) {
+		return true;
+	}
+
+	return false;
+}
+
+function is_event_join( $event_id=false, $id=false ){
+	if($id == false)
+	{
+		$id = (int) $_SESSION['id'];
+	}else{
+		$id = (int) $id;
+	}
+	if($event_id == false)
+	{
+		$event_id = (int) $_REQUEST['id'];
+	}else{
+		$event_id = (int) $event_id;
+	}
+
+	global $db;
+	$table = get_table_name('event_join');
+
+	$stmt = $db->prepare("SELECT * FROM `{$table}` WHERE user_id = $id AND event_id = $event_id");
 	$stmt->execute();
 	$result = $stmt->rowCount();
 

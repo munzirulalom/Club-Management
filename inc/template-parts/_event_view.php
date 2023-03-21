@@ -7,12 +7,12 @@ $stmt = $db->prepare("SELECT * FROM event WHERE id = '{$event_id}'");
 $stmt->execute();
 $event = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
-<div class="container-xl">
+<div class="container">
 
 	<h2 class="page-title my-3"><?php echo $event['name'] ?></h2>
 	<div class="row row-deck row-cards">
 		<div class="col-12 col-lg-12">
-			<img class="img-fluid d-block w-100" alt="" src="<?php echo get_attachment( $event['img'] ); ?>">			
+			<img class="img-fluid d-block w-80 mx-auto" alt="" src="<?php echo get_attachment( $event['img'] ); ?>">			
 		</div>
 	</div>
 
@@ -40,7 +40,7 @@ $event = $stmt->fetch(PDO::FETCH_ASSOC);
 						<dt class="col-5">Organize by:</dt>
 						<dd class="col-7"><?php echo get_club_name( $event['club_id'] ); ?></dd>
 					</dl>
-					<a href="<?php echo SITE_URL ?>/event/?action=join&event_id=<?php echo $event_id ?>&club_id=<?php echo $club_id ?>" class="btn btn-outline-success w-100">Join Now</a>
+					<a href="<?php echo SITE_URL ?>/event/?action=join&event_id=<?php echo $event_id ?>&club_id=<?php echo $club_id ?>" class="btn w-100 <?php echo is_event_join() ? 'btn-success disabled' : 'btn-outline-success' ?>">Join Now</a>
 					<?php
 
 					if ( can_manage('vice-president', $club_id) ){
