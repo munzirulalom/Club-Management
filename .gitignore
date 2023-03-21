@@ -1,9 +1,0 @@
-*.git
-*.rar
-*.zip
-static/
-dist/img
-error/
-dist/img/
-dist/libs/
-dist/img/
